@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --primary100: #bad5fa;
+  --primary200: #74acf4;
+  --primary300: #2f82ef;
+  --primary400: #1062cd;
+  --primary500: #0b4591;
+  --primary-alpha10: #2f82ef;
+
+  --secondary100: #fff2aa;
+  --secondary200: #ffe455;
+  --secondary300: #ffd700;
+  --secondary400: #c6a700;
+  --secondary500: #8c7600;
+  --secondary-alpha10: #ffd700;
+
+  --neutral100: #ffffff;
+  --neutral200: #e7e7e7;
+  --neutral300: #cecece;
+  --neutral400: #b6b6b6;
+  --neutral500: #9e9e9e;
+  --neutral600: #858585;
+  --neutral700: #6d6d6d;
+  --neutral800: #555555;
+  --neutral900: #3c3c3c;
+  --neutral1000: #242424;
+  --neutral-alpha10: #242424;
+
+  --red100: #fb3748;
+  --red200: #d00416;
+  --red-alpha10: #fb3748;
+
+  --yellow100: #ffdb43;
+  --yellow200: #dfb400;
+  --yellow-alpha10: #ffdb43;
+
+  --green100: #84ebb4;
+  --green200: #1fc16b;
+  --green-alpha10: #1fc16b;
+
+  /* radius  */
+  --radius-none: 0;
+  --radius-1: 2;
+  --radius-2: 4;
+  --radius-3: 6;
+  --radius-4: 8;
+  --radius-5: 10;
+  --radius-6: 12;
+  --radius-7: 16;
+  --radius-full: 999;
+
+  /* spacing */
+
+  --spacing-0: 2;
+  --spacing-1: 4;
+  --spacing-2: 8;
+  --spacing-3: 12;
+  --spacing-4: 16;
+  --spacing-5: 20;
+  --spacing-6: 24;
+  --spacing-7: 32;
+  --spacing-8: 40;
+  --spacing-9: 48;
+  --spacing-10: 56;
+}
+
+body {
+  font-family: "Lato", "Courier New", Courier, monospace;
+}

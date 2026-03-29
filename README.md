@@ -23,6 +23,7 @@ The goal of this project was to demonstrate my ability to create a responsive an
 - Typing indicator
 - Disabled input and button during response typing
 - Custom SVG-based UI elements
+- Voice input functionality 
 
 ## How to run 
 `bash
@@ -35,14 +36,15 @@ npm run dev
 - Used controlled inputs to ensure predictable behavior and better form handling
 - Implemented conditional rendering for empty state vs. active conversation
 - Tailwind CSS was used for fast and consistent styling
+- Implemented voice input using the Web Speech API (via react-speech-recognition). The transcript is synced with the textarea, allowing users to review and edit the message before sending.
 
 ## Challenges
 - Creating custom SVG shape for suggestion cards with precise sizes and color gradients
 - Handling auto-scroll for new messages
 - Designing responsive layouts 
+- Implementing voice input functionality 
 
 ## Future Improvements
 - Add backend for persistence
 - Add support for multiple chats
-- Implement voice input functionality 
 - Improve accessibility (ARIA roles, keyboard navigation)

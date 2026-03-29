@@ -7,8 +7,8 @@ import {
   Volume2,
 } from "lucide-react";
 import { useState } from "react";
-import { useSpeechSynthesis } from "react-speech-kit";
 import { toastSuccess } from "../../Toast/Toasts";
+import { useSpeech } from "react-text-to-speech";
 
 const Button = ({
   children,
@@ -42,15 +42,15 @@ const BotMessageItem = ({
   message: string;
   previousMessage: string;
 }) => {
-  const { speak, cancel } = useSpeechSynthesis();
+  const { start, stop } = useSpeech({ text: message });
   const [isReading, setIsReading] = useState(false);
 
   const listenClick = () => {
     if (isReading) {
-      cancel();
+      stop();
       setIsReading(false);
     } else {
-      speak({ text: message });
+      start();
       setIsReading(true);
     }
   };

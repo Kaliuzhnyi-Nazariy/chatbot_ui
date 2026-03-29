@@ -111,7 +111,7 @@ const MessageInput = ({ addMessage, isTyping }: MessageInputProps) => {
           className="size-6 lg:size-10 bg-(--neutral400) border border-[rgba(255,255,255,0.1)] disabled:opacity-50 rounded-sm flex items-center justify-center cursor-pointer disabled:cursor-auto "
           type="submit"
           aria-label="send button"
-          disabled={!inputValue.trim() || isTyping}
+          disabled={!inputValue.trim() || isTyping || listening}
         >
           <Send className="text-white size-3 lg:size-6" />
         </button>

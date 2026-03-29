@@ -10,15 +10,20 @@ const ChatContainer = () => {
   return (
     <div
       className={clsx(
-        "bg-gray-100 py-5 px-8 lg:py-10 lg:px-16 border border-white/10 rounded-[48px] flex flex-col gap-3 lg:gap-10 h-full min-h-0 overflow-y-auto overflow-hidden lg:flex-1 ",
-        messages.length === 0 && " justify-between",
+        "bg-(--neutral100) border border-white/10 rounded-[48px]",
+        "flex flex-col justify-between h-full min-h-0 lg:flex-1",
+        "py-4 px-8 lg:py-10 lg:px-16 lg:gap-10",
+        "overflow-hidden",
       )}
     >
-      {messages.length > 0 ? (
-        <MessagesList messages={messages} isTyping={isTyping} />
-      ) : (
-        <EmptyState addMessage={addMessage} />
-      )}
+      <div className="overflow-y-auto flex flex-col h-full">
+        {/* <div className="h-full grid grid-rows-[auto_1fr] overflow-y-auto"> */}
+        {messages.length > 0 ? (
+          <MessagesList messages={messages} isTyping={isTyping} />
+        ) : (
+          <EmptyState addMessage={addMessage} />
+        )}
+      </div>
       <MessageInput addMessage={addMessage} isTyping={isTyping} />
     </div>
   );

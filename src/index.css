@@ -16,7 +16,7 @@
   --secondary500: #8c7600;
   --secondary-alpha10: #ffd700;
 
-  --neutral100: #ffffff;
+  --neutral100: #f3f3f3;
   --neutral200: #e7e7e7;
   --neutral300: #cecece;
   --neutral400: #b6b6b6;
@@ -64,6 +64,10 @@
   --spacing-8: 40;
   --spacing-9: 48;
   --spacing-10: 56;
+
+  /* icons color */
+  --inactiveicon: #bfbdbd;
+  --icon: #4d4849;
 }
 
 body {

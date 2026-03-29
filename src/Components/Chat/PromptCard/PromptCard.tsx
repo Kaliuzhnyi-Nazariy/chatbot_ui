@@ -12,7 +12,7 @@ const PromptCard = ({
   endColor: string;
 }) => {
   return (
-    <div className="w-67.5 relative">
+    <div className="w-67.5 relative hover:scale-110 active:scale-110 transition-transform duration-200 text-start">
       <Bubble middleColor={middleColor} endColor={endColor} />
       <div className="absolute w-full h-full top-0 left-0">
         <p className="absolute top-10 left-6 w-55.5">{message}</p>

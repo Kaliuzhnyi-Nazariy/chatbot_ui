@@ -17,7 +17,6 @@ const ChatContainer = () => {
       )}
     >
       <div className="overflow-y-auto flex flex-col h-full">
-        {/* <div className="h-full grid grid-rows-[auto_1fr] overflow-y-auto"> */}
         {messages.length > 0 ? (
           <MessagesList messages={messages} isTyping={isTyping} />
         ) : (

@@ -8,7 +8,7 @@ const UserMessageItem = ({ message }: { message: string }) => {
         type="button"
         aria-label="Edit button"
       >
-        <SquarePen />
+        <SquarePen className="size-4 md:size-6" />
       </button>
 
       <div className="px-4 py-2 md:px-10 md:py-4 bg-white rounded-2xl  flex items-center gap-6 w-full">

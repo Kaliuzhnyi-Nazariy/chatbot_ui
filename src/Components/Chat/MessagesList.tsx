@@ -23,7 +23,7 @@ const MessagesList = ({
   return (
     <>
       <div className="flex-1 overflow-y-auto">
-        <ul className="flex flex-col gap-3 lg:gap-10">
+        <ul className="flex flex-col gap-3 lg:gap-10 mb-2 lg:mb-0">
           {messages.map((m, index) => {
             if (m.role === "user") {
               return <UserMessageItem key={m.id} message={m.content} />;
@@ -37,7 +37,7 @@ const MessagesList = ({
             );
           })}
         </ul>
-        <p> {isTyping && "typing..."}</p>
+        {isTyping && <p>typing...</p>}
         <div ref={messagesEndRef} />
       </div>
     </>

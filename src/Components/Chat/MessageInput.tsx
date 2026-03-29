@@ -1,5 +1,8 @@
-import { Mic, Send } from "lucide-react";
-import { useRef, useState } from "react";
+import { CirclePause, Mic, Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 type MessageInputProps = {
   addMessage: (data: string) => void;
@@ -8,6 +11,12 @@ type MessageInputProps = {
 
 const MessageInput = ({ addMessage, isTyping }: MessageInputProps) => {
   const [inputValue, setInputValue] = useState("");
+  const {
+    transcript,
+    listening,
+    browserSupportsSpeechRecognition,
+    resetTranscript,
+  } = useSpeechRecognition();
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -22,6 +31,29 @@ const MessageInput = ({ addMessage, isTyping }: MessageInputProps) => {
       addMessage(inputValue);
       setInputValue("");
       resetTextarea();
+      if (listening) {
+        SpeechRecognition.stopListening();
+      }
+      resetTranscript();
+    }
+  };
+
+  useEffect(() => {
+    if (transcript) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setInputValue(transcript);
+    }
+  }, [transcript]);
+
+  const handleVoiceInput = () => {
+    if (!browserSupportsSpeechRecognition) {
+      return <span>Browser doesn't support speech recognition.</span>;
+    }
+
+    if (listening) {
+      SpeechRecognition.stopListening();
+    } else {
+      SpeechRecognition.startListening({ continuous: true });
     }
   };
 
@@ -34,9 +66,17 @@ const MessageInput = ({ addMessage, isTyping }: MessageInputProps) => {
           handleSendMessage();
         }}
       >
-        <div className="size-5 lg:size-10 flex items-center justify-center">
-          <Mic className="size-6 text-[#a9a6a6]" />
-        </div>
+        <button
+          className="size-5 lg:size-10 flex items-center justify-center hover:cursor-pointer "
+          onClick={handleVoiceInput}
+          type="button"
+        >
+          {listening ? (
+            <CirclePause className="size-6 text-(--micro) hover:text-(--microHover) active:text-(--microHover)" />
+          ) : (
+            <Mic className="size-6 text-(--micro) hover:text-(--microHover) active:text-(--microHover)" />
+          )}
+        </button>
         <textarea
           rows={1}
           className="

@@ -8,10 +8,10 @@ const UserMessageItem = ({ message }: { message: string }) => {
         type="button"
         aria-label="Edit button"
       >
-        <SquarePen className="size-4 md:size-6" />
+        <SquarePen className="size-2 md:size-6" />
       </button>
 
-      <div className="px-4 py-2 md:px-10 md:py-4 bg-white rounded-2xl  flex items-center gap-6 w-full">
+      <div className="px-4 py-2 md:px-10 md:py-4 bg-white rounded-2xl  flex items-center gap-6 w-full max-w-[85%]">
         <img src="/user_photo.png" alt="user photo" className="size-10" />
         <p className="break-all text-xs lg:text-lg w-full">{message}</p>
       </div>

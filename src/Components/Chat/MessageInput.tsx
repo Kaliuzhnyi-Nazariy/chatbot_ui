@@ -104,7 +104,7 @@ const MessageInput = ({ addMessage, isTyping }: MessageInputProps) => {
               handleSendMessage();
             }
           }}
-          disabled={isTyping}
+          disabled={isTyping || listening}
           aria-label="Chat input"
         />
         <button

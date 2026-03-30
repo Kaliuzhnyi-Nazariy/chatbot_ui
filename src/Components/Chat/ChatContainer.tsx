@@ -5,7 +5,7 @@ import MessagesList from "./MessagesList";
 import clsx from "clsx";
 
 const ChatContainer = () => {
-  const { messages, addMessage, isTyping } = useChat();
+  const { messages, addMessage, isTyping, updateMessage } = useChat();
 
   return (
     <div
@@ -18,7 +18,11 @@ const ChatContainer = () => {
     >
       <div className="overflow-y-auto flex flex-col h-full">
         {messages.length > 0 ? (
-          <MessagesList messages={messages} isTyping={isTyping} />
+          <MessagesList
+            messages={messages}
+            isTyping={isTyping}
+            editMessage={updateMessage}
+          />
         ) : (
           <EmptyState addMessage={addMessage} />
         )}

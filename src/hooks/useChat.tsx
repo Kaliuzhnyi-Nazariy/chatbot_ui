@@ -40,5 +40,13 @@ Odit voluptate quo facere voluptates provident, praesentium itaque quibusdam des
     }, delay);
   };
 
-  return { messages, isTyping, addMessage };
+  const updateMessage = (messageId: string, newMessage: string) => {
+    const messageIndex = messages.findIndex((m) => m.id === messageId);
+
+    if (messageIndex === -1) return;
+    setMessages(messages.slice(0, messageIndex));
+    addMessage(newMessage);
+  };
+
+  return { messages, isTyping, addMessage, updateMessage };
 };

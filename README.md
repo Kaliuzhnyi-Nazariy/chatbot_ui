@@ -24,11 +24,14 @@ The goal of this project was to demonstrate my ability to create a responsive an
 - Disabled input and button during response typing
 - Custom SVG-based UI elements
 - Voice input functionality 
+- Edit user message functionality
+- Copying to clicboard chat response
 
 ## How to run 
-`bash
+```bash
 npm install
 npm run dev
+```
 
 ## Architecture & Decisions
 - Used local state instead of global state to keep the application simple and aligned with the project scope
